@@ -8,7 +8,6 @@ const loop = () =>
         {
             let datas = data.hits
             let html;
-
             for(const info of datas)
             {
                 html+= receive_Info(info)
