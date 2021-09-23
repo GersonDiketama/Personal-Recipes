@@ -1,6 +1,8 @@
 import { getFoods } from "./api-manager/ApiManager.js";
-import { receive_Info } from "./Data-Info/infoList.js";
+import { loops } from "./Data-Info/InfoLoops.js";
+import { searchBar } from "./Data-Info/HtmlDisplays.js";
 
+document.querySelector('nav').innerHTML = searchBar()
 const loop = () =>
 {
     getFoods()
@@ -8,11 +10,8 @@ const loop = () =>
         {
             let datas = data.hits
             let html;
-            for(const info of datas)
-            {
-                html+= receive_Info(info)
-            }
-            document.querySelector(".show").innerHTML += html
+            console.log(data)
+            document.querySelector(".show").innerHTML += loops(datas)
         }
         )
 }
