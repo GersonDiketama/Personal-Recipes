@@ -1,11 +1,22 @@
 export const receive_Info = (data) =>
 {
-    return `<h2>${data.recipe.label}</h2>
-            <img src="">
-            <span></span>
-        <div class = "food-nutri-info">
-        <li></li>
+    return `
+            <div>
 
-        </div>   
+            <div>
+            <h2>${data.recipe.label}</h2>
+            <img src="${data.recipe.image}">
+            </div>
+
+            <div class = "food-nutri-info">
+
+            </div>   
+
+            </div>
+
+            <div  class = "ingredients">
+            <h3>Ingredients</h3>
+            <p>${data.recipe.ingredientLines}</p>
+            </div>
     `
 }
